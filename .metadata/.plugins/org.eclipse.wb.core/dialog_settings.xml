@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.wb.internal.core.editor.palette.dialogs.PaletteManagerDialog">
+		<item key="x" value="610"/>
+		<item key="y" value="191"/>
+		<item key="width" value="700"/>
+		<item key="height" value="647"/>
+	</section>
+	<section name="org.eclipse.wb.internal.core.editor.palette.dialogs.CategoryAddDialog">
+		<item key="x" value="610"/>
+		<item key="y" value="275"/>
+		<item key="width" value="700"/>
+		<item key="height" value="480"/>
+	</section>
+	<section name="org.eclipse.wb.internal.core.editor.palette.dialogs.ImportArchiveDialog">
+		<item key="x" value="610"/>
+		<item key="y" value="262"/>
+		<item key="width" value="795"/>
+		<item key="height" value="505"/>
+		<list key="HISTORY_JAR_LIST">
+			<item value="C:/My Shared Folder/Codigo fuente/Java/Curso del TESJI/JCalendarShow/lib/jcalendar-1.4.jar"/>
+			<item value="C:/My Shared Folder/Codigo fuente/Java/Curso del TESJI/CalendarEdad/lib/jcalendar-1.4.jar"/>
+		</list>
+	</section>
+	<section name="org.eclipse.wb.internal.core.model.util.RenameConvertSupport$RenameDialog">
+		<item key="x" value="610"/>
+		<item key="y" value="327"/>
+		<item key="width" value="700"/>
+		<item key="height" value="375"/>
+	</section>
+</section>

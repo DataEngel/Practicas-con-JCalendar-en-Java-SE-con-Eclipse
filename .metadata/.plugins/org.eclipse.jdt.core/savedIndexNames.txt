@@ -1,0 +1,11 @@
+INDEX VERSION 1.131+C:\My Shared Folder\Codigo fuente\Java\Curso del TESJI\.metadata\.plugins\org.eclipse.jdt.core
+424002587.index
+896531544.index
+1600910900.index
+656390479.index
+1007722070.index
+1584896008.index
+4146513341.index
+140306015.index
+3410937080.index
+1214990149.index

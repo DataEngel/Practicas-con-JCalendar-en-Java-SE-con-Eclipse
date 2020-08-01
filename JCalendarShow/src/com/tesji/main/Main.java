@@ -1,0 +1,11 @@
+package com.tesji.main;
+
+import com.tesji.view.ViewShow;  
+
+public class Main {
+	public static void main(String[] args) {  
+		new ViewShow().setVisible(true);      
+		
+	}
+
+}

@@ -1,0 +1,126 @@
+package com.tesji.view;
+
+import java.awt.BorderLayout;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import com.toedter.calendar.JDateChooser;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import com.tesji.model.Model;
+import javax.swing.JOptionPane;
+import java.util.Calendar;
+import java.util.Date;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.Font;
+
+public class CalendarView extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					CalendarView frame = new CalendarView();  
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}   
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public CalendarView() {
+		
+		Model objeto = new Model();   
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblUno = new JLabel("Calcular edad");
+		lblUno.setBounds(170, 10, 94, 24);
+		contentPane.add(lblUno);
+		
+		JLabel lbl2 = new JLabel("Seleccione la fecha de nacimiento");
+		lbl2.setBounds(122, 44, 222, 21);
+		contentPane.add(lbl2);
+		
+		JDateChooser nacimiento = new JDateChooser();
+		nacimiento.setBounds(10, 91, 174, 24);
+		contentPane.add(nacimiento);
+		
+		JDateChooser actual = new JDateChooser(); 
+		actual.setBounds(10, 138, 175, 24);
+		contentPane.add(actual);
+		
+		JTextArea textResult = new JTextArea();
+		textResult.setBounds(216, 93, 210, 76);
+		contentPane.add(textResult);
+		
+		JButton btnSalir = new JButton("Salir");
+		btnSalir.setBounds(10, 232, 85, 21);
+		contentPane.add(btnSalir);
+		
+		JButton btnNuevo = new JButton("Nuevo");
+		btnNuevo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				nacimiento.setDate(null);
+				actual.setDate(null); 
+				
+			}
+		});
+		btnNuevo.setBounds(158, 232, 85, 21);
+		contentPane.add(btnNuevo);
+		
+		JButton btnCalcular = new JButton("Calcular");
+		btnCalcular.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					objeto.days_born = nacimiento.getCalendar().get(Calendar.DAY_OF_MONTH);
+					objeto.days_actual = actual.getCalendar().get(Calendar.DAY_OF_MONTH);
+					objeto.mes_nacimiento = nacimiento.getCalendar().get(Calendar.MONTH) + 1;
+					objeto.month_actual = actual.getCalendar().get(Calendar.MONTH) + 1;
+					objeto.year_born = nacimiento.getCalendar().get(Calendar.YEAR);
+					objeto.year_actual = actual.getCalendar().get(Calendar.YEAR);
+
+					Date fechaActual = actual.getDate();
+					Date fechaNacimiento = nacimiento.getDate();
+
+					if (fechaNacimiento.compareTo(fechaActual) == -1) {
+						objeto.days = (int) (((fechaActual.getTime()-fechaNacimiento.getTime()))/(1000*60*60*24)+1);
+						textResult.setText(objeto.total());
+					} else {  
+						JOptionPane.showMessageDialog(null, "Agregue nuevamente la fecha");
+					}
+
+				} catch (Exception ex) {
+					JOptionPane.showMessageDialog(null, "Agrege correctamente la fecha");
+
+				}
+			}
+		});
+		btnCalcular.setBounds(316, 232, 85, 21);
+		contentPane.add(btnCalcular);
+		
+		
+	}
+}

@@ -1,0 +1,38 @@
+package com.tesji.model;
+
+import com.tesji.view.CalendarView;   
+
+public class Model {  
+	
+	public int days;
+	public int days_born;
+	public int days_actual;
+	public int month_actual;
+	public int mes_nacimiento;
+	public int year_actual;
+	public int year_born;
+
+	public String total() {
+		int days1;
+		int yearTotal;
+		int monthTotal;
+		int daysTotal;
+		if (year_born % 4 == 0) {
+			days -= 1;
+		} else {
+			days -= 2;
+		}
+
+		yearTotal = (int) (days / 365.25);
+		days1 = (int) (days - (yearTotal * 365.25));
+		monthTotal = days1 / 30;
+		daysTotal = days1 - (monthTotal * 30);
+		if (daysTotal == -1) {
+			daysTotal = 0;
+		}
+
+		return "SU EDAD ES:" + "\n" + "Años: " + yearTotal + "\n" + "Mes: " + monthTotal + "\n" + "Días: " + daysTotal;
+
+	}
+
+}
