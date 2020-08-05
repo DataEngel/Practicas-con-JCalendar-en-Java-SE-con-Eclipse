@@ -1,4 +1,4 @@
-#Prácticas con JCalendar en JavaSE con Swing. 
+# Prácticas con JCalendar en JavaSE con Swing. 
 
 En la carpeta de **JCalendarShow** se muestra la forma de como podemos mostrar la fecha actual a partir de la librería JCalendar con un .jar exportado desde Eclipse IDE. 
 
